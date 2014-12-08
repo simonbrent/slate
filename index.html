@@ -82,6 +82,14 @@
 </ul>
 
 <p>Default: <code class="prettyprint">true</code></p>
+<h2 id='chr'>chr</h2>
+<p>The chromosome Genoverse will use to display features.</p>
+
+<p>Default: <code class="prettyprint">1</code></p>
+<h2 id='chromosomesize'>chromosomeSize</h2>
+<p>The length of the chromosome Genoverse will use to display features. <strong>Required</strong> if the <code class="prettyprint">genome</code> option is not set.</p>
+
+<p>Default: <code class="prettyprint">undefined</code></p>
 <h2 id='colors'>colors</h2>
 <p><aside class="warning">FIXME: are these even really needed?</aside></p>
 
@@ -107,6 +115,10 @@ No value is given by default, resulting in a <code class="prettyprint">&lt;div&g
 </ul>
 
 <p>Default: <code class="prettyprint">&#39;scroll&#39;</code></p>
+<h2 id='end'>end</h2>
+<p>The end position of the region Genoverse will initially use to display features.</p>
+
+<p>Default: <code class="prettyprint">1000000</code></p>
 <h2 id='genome'>genome</h2>
 <p>Either the name of a file in the <code class="prettyprint">js/genomes/</code> directory (e.g. <code class="prettyprint">grch38</code>), or an object describing the genome. Used to determine the length of chromosomes, and how to draw their ideograms.</p>
 
@@ -145,6 +157,10 @@ No value is given by default, resulting in a <code class="prettyprint">&lt;div&g
 <p>The default key for sessionStorage/localStorage configuration is &lsquo;genoverse&rsquo;. saveKey will be appended to this if it is set, to allow different keys for different instances of Genoverse.</p>
 
 <p>Default: <code class="prettyprint">&#39;&#39;</code> (empty string)</p>
+<h2 id='start'>start</h2>
+<p>The start position of the region Genoverse will initially use to display features.</p>
+
+<p>Default: <code class="prettyprint">1</code></p>
 <h2 id='storagetype'>storageType</h2>
 <p><code class="prettyprint">&#39;sessionStorage&#39;</code> will save configurations only for one browser tab, while that tab remains open. <code class="prettyprint">&#39;localStorage&#39;</code> will allow configurations to be reused across all tabs of a browser, and be retained when the browser window is closed.</p>
 
