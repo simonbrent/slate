@@ -11,6 +11,18 @@ Values:
 
 Default: `true`
 
+## chr
+
+The chromosome Genoverse will use to display features.
+
+Default: `1`
+
+## chromosomeSize
+
+The length of the chromosome Genoverse will use to display features. **Required** if the `genome` option is not set.
+
+Default: `undefined`
+
 ## colors
 
 <aside class="warning">FIXME: are these even really needed?</aside>
@@ -41,6 +53,12 @@ Values:
 * `'off'` dragging does nothing
 
 Default: `'scroll'`
+
+## end
+
+The end position of the region Genoverse will initially use to display features.
+
+Default: `1000000`
 
 ## genome
 
@@ -87,6 +105,12 @@ Default: `false`
 The default key for sessionStorage/localStorage configuration is 'genoverse'. saveKey will be appended to this if it is set, to allow different keys for different instances of Genoverse.
 
 Default: `''` (empty string)
+
+## start
+
+The start position of the region Genoverse will initially use to display features.
+
+Default: `1`
 
 ## storageType
 
