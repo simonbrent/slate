@@ -11,11 +11,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
       <script src="javascripts/all.js" type="text/javascript"></script>
 
-      <script>
-        $(function() {
-          setupLanguages(["shell","ruby","python"]);
-        });
-      </script>
   </head>
 
   <body class="index">
@@ -27,11 +22,6 @@
     </a>
     <div class="tocify-wrapper">
       <img src="images/logo.png" />
-        <div class="lang-selector">
-              <a href="#" data-language-name="shell">shell</a>
-              <a href="#" data-language-name="ruby">ruby</a>
-              <a href="#" data-language-name="python">python</a>
-        </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
         </div>
@@ -39,7 +29,6 @@
       <div id="toc">
       </div>
         <ul class="toc-footer">
-            <li><a href='#'>Sign Up for a Developer Key</a></li>
             <li><a href='http://github.com/tripit/slate'>Documentation Powered by Slate</a></li>
         </ul>
     </div>
@@ -47,210 +36,178 @@
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='introduction'>Introduction</h1>
-<p>Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.</p>
+<p>Genoverse is a portable, customizable, back-end independent JavaScript and HTML5 based genome browser which allows the user to explore data interactively. </p>
 
-<p>We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
-
-<p>This example API documentation page was created with <a href="http://github.com/tripit/slate">Slate</a>. Feel free to edit it and use it as a base for your own API&rsquo;s documentation.</p>
-<h1 id='authentication'>Authentication</h1>
-<blockquote>
-<p>To authorize, use this code:</p>
-</blockquote>
-<pre><code class="highlight ruby"><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre>
-<pre><code class="highlight python"><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre>
-<pre><code class="highlight shell"><span class="c"># With shell, you can just pass the correct header with each request</span>
-curl <span class="s2">"api_endpoint_here"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre>
-
-<blockquote>
-<p>Make sure to replace <code class="prettyprint">meowmeowmeow</code> with your API key.</p>
-</blockquote>
-
-<p>Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our <a href="http://example.com/developers">developer portal</a>.</p>
-
-<p>Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
-
-<p><code class="prettyprint">Authorization: meowmeowmeow</code></p>
-
-<p><aside class="notice">
-You must replace <code class="prettyprint">meowmeowmeow</code> with your personal API key.
-</aside></p>
-<h1 id='kittens'>Kittens</h1><h2 id='get-all-kittens'>Get All Kittens</h2><pre><code class="highlight ruby"><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span>
-</code></pre>
-<pre><code class="highlight python"><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
-</code></pre>
-<pre><code class="highlight shell">curl <span class="s2">"http://example.com/api/kittens"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
+<p>Genoverse can be installed on any website and show data from a wide range of online or local sources, working with a variety of formats, such as XML, JSON, GFF, GFF3, BED, and can be customised to parse and display any data source as required. </p>
+<h1 id='getting-started'>Getting started</h1><pre><code class="highlight html"><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"/path/to/genoverse/genoverse.combined.js"</span><span class="nt">&gt;</span>
+  <span class="p">{</span>
+    <span class="na">container</span> <span class="p">:</span> <span class="s1">'#genoverse'</span><span class="p">,</span>
+    <span class="na">genome</span>    <span class="p">:</span> <span class="s1">'grch38'</span><span class="p">,</span>
+    <span class="na">chr</span>       <span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="na">start</span>     <span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="na">end</span>       <span class="p">:</span> <span class="mi">100000</span><span class="p">,</span>
+    <span class="na">plugins</span>   <span class="p">:</span> <span class="p">[</span> <span class="s1">'controlPanel'</span><span class="p">,</span> <span class="s1">'karyotype'</span><span class="p">,</span> <span class="s1">'trackControls'</span><span class="p">,</span> <span class="s1">'resizer'</span><span class="p">,</span> <span class="s1">'tooltips'</span><span class="p">,</span> <span class="s1">'fileDrop'</span> <span class="p">],</span>
+    <span class="na">tracks</span>    <span class="p">:</span> <span class="p">[</span>
+      <span class="nx">Genoverse</span><span class="p">.</span><span class="nx">Track</span><span class="p">.</span><span class="nx">Scalebar</span><span class="p">,</span>
+      <span class="nx">Genoverse</span><span class="p">.</span><span class="nx">Track</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+        <span class="na">name</span>       <span class="p">:</span> <span class="s1">'Sequence'</span><span class="p">,</span>
+        <span class="na">controller</span> <span class="p">:</span> <span class="nx">Genoverse</span><span class="p">.</span><span class="nx">Track</span><span class="p">.</span><span class="nx">Controller</span><span class="p">.</span><span class="nx">Sequence</span><span class="p">,</span>
+        <span class="na">model</span>      <span class="p">:</span> <span class="nx">Genoverse</span><span class="p">.</span><span class="nx">Track</span><span class="p">.</span><span class="nx">Model</span><span class="p">.</span><span class="nx">Sequence</span><span class="p">.</span><span class="nx">Ensembl</span><span class="p">,</span>
+        <span class="na">view</span>       <span class="p">:</span> <span class="nx">Genoverse</span><span class="p">.</span><span class="nx">Track</span><span class="p">.</span><span class="nx">View</span><span class="p">.</span><span class="nx">Sequence</span><span class="p">,</span>
+        <span class="mi">100000</span>     <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="na">resizable</span>  <span class="p">:</span> <span class="s1">'auto'</span>
+      <span class="p">}),</span>
+      <span class="nx">Genoverse</span><span class="p">.</span><span class="nx">Track</span><span class="p">.</span><span class="nx">Gene</span>
+    <span class="p">]</span>
+  <span class="p">}</span>
+<span class="nt">&lt;/script&gt;</span>
 </code></pre>
 
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre><code class="highlight json"><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fluffums"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Isis"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
-</span></code></pre>
+<p>Genoverse can be easily integrated into your websites. To install:</p>
 
-<p>This endpoint retrieves all kittens.</p>
-<h3 id='http-request'>HTTP Request</h3>
-<p><code class="prettyprint">GET http://example.com/kittens</code></p>
-<h3 id='query-parameters'>Query Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>include_cats</td>
-<td>false</td>
-<td>If set to true, the result will also include cats.</td>
-</tr>
-<tr>
-<td>available</td>
-<td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
-</tr>
-</tbody></table>
+<ol>
+<li>Clone Genoverse from github: <code class="prettyprint">git clone https://github.com/EugeneBragin/Genoverse.git</code></li>
+<li>Configure your web server so that it can read the Genoverse directory&rsquo;s <code class="prettyprint">js</code>, <code class="prettyprint">css</code> and <code class="prettyprint">i</code> directories as static content</li>
+<li>Embed Genoverse in your site. An example of how to do this can be seen on the right.</li>
+</ol>
 
-<p><aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside></p>
-<h2 id='get-a-specific-kitten'>Get a Specific Kitten</h2><pre><code class="highlight ruby"><span class="nb">require</span> <span class="s1">'kittn'</span>
+          <h1 id='genoverse-options'>Genoverse options</h1><h2 id='autohidemessages'>autoHideMessages</h2>
+<p>Set to <code class="prettyprint">true</code> to automatically hide track messages when an action (click, drag, etc.) is taken on Genoverse.</p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre>
-<pre><code class="highlight python"><span class="kn">import</span> <span class="nn">kittn</span>
+<p>Values:</p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre>
-<pre><code class="highlight shell">curl <span class="s2">"http://example.com/api/kittens/3"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre>
+<ul>
+<li><code class="prettyprint">true</code></li>
+<li><code class="prettyprint">false</code></li>
+</ul>
 
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre><code class="highlight json"><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Isis"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
+<p>Default: <code class="prettyprint">true</code></p>
+<h2 id='colors'>colors</h2>
+<p><aside class="warning">FIXME: are these even really needed?</aside></p>
 
-<p>This endpoint retrieves a specific kitten.</p>
+<p>Default: <code class="prettyprint">{ background: &#39;#FFFFFF&#39;, sortHandle: &#39;#CFD4E7&#39; }</code></p>
+<h2 id='container'>container</h2>
+<p>The element Genoverse will be created inside. This can be a CSS selector, e.g. <code class="prettyprint">&#39;#genoverse&#39;</code>, a jQuery selector, e.g. <code class="prettyprint">$(&#39;#genoverse&#39;)</code>, or a DOM element, e.g. <code class="prettyprint">document.getElementById(&#39;genoverse&#39;)</code>.
+No value is given by default, resulting in a <code class="prettyprint">&lt;div&gt;</code> with the id of &lsquo;genoverse&rsquo; being appended to the body of the page.</p>
 
-<p><aside class="warning">If you&rsquo;re not using an administrator API key, note that some kittens will return 403 Forbidden if they are hidden for admins only.</aside></p>
-<h3 id='http-request'>HTTP Request</h3>
-<p><code class="prettyprint">GET http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>ID</td>
-<td>The ID of the cat to retrieve</td>
-</tr>
-</tbody></table>
+<p>Default: <code class="prettyprint">undefined</code></p>
+<h2 id='defaultlength'>defaultLength</h2>
+<p>Length of region in base pairs to use if invalid start and end coordinates are given (start is greater than end).</p>
 
-          <h1 id='errors'>Errors</h1>
-<p><aside class="notice">This error section is stored in a separate file in <code class="prettyprint">includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files&hellip;just save them to the <code class="prettyprint">includes</code> folder and add them to the top of your <code class="prettyprint">index.md</code>&rsquo;s frontmatter. Files are included in the order listed.</aside></p>
+<p>Default: <code class="prettyprint">5000</code></p>
+<h2 id='dragaction'>dragAction</h2>
+<p>What action is performed when a mouse drag is performed on Genoverse.</p>
 
-<p>The Kittn API uses the following error codes:</p>
+<p>Values:</p>
 
-<table><thead>
-<tr>
-<th>Error Code</th>
-<th>Meaning</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>400</td>
-<td>Bad Request &ndash; Your request sucks</td>
-</tr>
-<tr>
-<td>401</td>
-<td>Unauthorized &ndash; Your API key is wrong</td>
-</tr>
-<tr>
-<td>403</td>
-<td>Forbidden &ndash; The kitten requested is hidden for administrators only</td>
-</tr>
-<tr>
-<td>404</td>
-<td>Not Found &ndash; The specified kitten could not be found</td>
-</tr>
-<tr>
-<td>405</td>
-<td>Method Not Allowed &ndash; You tried to access a kitten with an invalid method</td>
-</tr>
-<tr>
-<td>406</td>
-<td>Not Acceptable &ndash; You requested a format that isn&rsquo;t json</td>
-</tr>
-<tr>
-<td>410</td>
-<td>Gone &ndash; The kitten requested has been removed from our servers</td>
-</tr>
-<tr>
-<td>418</td>
-<td>I&rsquo;m a teapot</td>
-</tr>
-<tr>
-<td>429</td>
-<td>Too Many Requests &ndash; You&rsquo;re requesting too many kittens! Slown down!</td>
-</tr>
-<tr>
-<td>500</td>
-<td>Internal Server Error &ndash; We had a problem with our server. Try again later.</td>
-</tr>
-<tr>
-<td>503</td>
-<td>Service Unavailable &ndash; We&rsquo;re temporarially offline for maintanance. Please try again later.</td>
-</tr>
-</tbody></table>
+<ul>
+<li><code class="prettyprint">&#39;scroll&#39;</code> dragging moves the location of focus on the chromosome</li>
+<li><code class="prettyprint">&#39;select&#39;</code> dragging selects a region of the chromosome</li>
+<li><code class="prettyprint">&#39;off&#39;</code> dragging does nothing</li>
+</ul>
+
+<p>Default: <code class="prettyprint">&#39;scroll&#39;</code></p>
+<h2 id='genome'>genome</h2>
+<p>Either the name of a file in the <code class="prettyprint">js/genomes/</code> directory (e.g. <code class="prettyprint">grch38</code>), or an object describing the genome. Used to determine the length of chromosomes, and how to draw their ideograms.</p>
+
+<p>Default: <code class="prettyprint">undefined</code></p>
+<h2 id='isstatic'>isStatic</h2>
+<p>Set to <code class="prettyprint">true</code> if you want an instance of Genoverse which cannot be scrolled or zoomed.</p>
+
+<p>Values:</p>
+
+<ul>
+<li><code class="prettyprint">true</code></li>
+<li><code class="prettyprint">false</code></li>
+</ul>
+
+<p>Default: <code class="prettyprint">false</code></p>
+<h2 id='longestlabel'>longestLabel</h2>
+<p>Length in characters of the longest label for a feature. Used to determine the amount a requested region needs to be expanded by to ensure all features and labels are rendered correctly.</p>
+
+<p>Default: <code class="prettyprint">30</code></p>
+<h2 id='plugins'>plugins</h2>
+<p>The plugins Genoverse will use.</p>
+
+<p>Default: <code class="prettyprint">[]</code></p>
+<h2 id='saveable'>saveable</h2>
+<p>Set to <code class="prettyprint">true</code> to allow users&#39; track configurations to be saved in the browser.</p>
+
+<p>Values:</p>
+
+<ul>
+<li><code class="prettyprint">true</code></li>
+<li><code class="prettyprint">false</code></li>
+</ul>
+
+<p>Default: <code class="prettyprint">false</code></p>
+<h2 id='savekey'>saveKey</h2>
+<p>The default key for sessionStorage/localStorage configuration is &lsquo;genoverse&rsquo;. saveKey will be appended to this if it is set, to allow different keys for different instances of Genoverse.</p>
+
+<p>Default: <code class="prettyprint">&#39;&#39;</code> (empty string)</p>
+<h2 id='storagetype'>storageType</h2>
+<p><code class="prettyprint">&#39;sessionStorage&#39;</code> will save configurations only for one browser tab, while that tab remains open. <code class="prettyprint">&#39;localStorage&#39;</code> will allow configurations to be reused across all tabs of a browser, and be retained when the browser window is closed.</p>
+
+<p>Values:</p>
+
+<ul>
+<li><code class="prettyprint">&#39;localStorage&#39;</code></li>
+<li><code class="prettyprint">&#39;sessionStorage&#39;</code></li>
+</ul>
+
+<p>Default: <code class="prettyprint">&#39;sessionStorage&#39;</code></p>
+<h2 id='trackautoheight'>trackAutoHeight</h2>
+<p>Set to <code class="prettyprint">true</code> to automatically resize tracks so that all features in the current region are shown.</p>
+
+<p>Values:</p>
+
+<ul>
+<li><code class="prettyprint">true</code></li>
+<li><code class="prettyprint">false</code></li>
+</ul>
+
+<p>Default: <code class="prettyprint">false</code></p>
+<h2 id='tracks'>tracks</h2>
+<p>The tracks Genoverse will display when created.</p>
+
+<p>Default: <code class="prettyprint">[]</code></p>
+<h2 id='urlparamtemplate'>urlParamTemplate</h2>
+<p>How your website specifies the chromosome, start and end parameters in the URL for the genomic region you are currently looking at. <code class="prettyprint">__CHR__</code>, <code class="prettyprint">__START__</code> and <code class="prettyprint">__END__</code> are placeholders for the these values.
+Set to <code class="prettyprint">false</code> if you don&rsquo;t want the URL to be updated as you navigate Genoverse.
+<aside class="warning">Is this true?</aside></p>
+
+<p>Default: <code class="prettyprint">&#39;r=__CHR__:__START__-__END__&#39;</code>
+Alternative example:<code class="prettyprint">&#39;chr=__CHR__&amp;start=__START__&amp;end=__END__&#39;</code></p>
+<h2 id='usehash'>useHash</h2>
+<p>Determines which method the browser should use to update it&rsquo;s URL when navigating in Genoverse.</p>
+
+<p>Values:</p>
+
+<ul>
+<li><code class="prettyprint">true</code> Force the Genoverse to change the browser&rsquo;s <code class="prettyprint">window.location.hash</code></li>
+<li><code class="prettyprint">false</code> Force the Genoverse to use<code class="prettyprint">window.history.pushState</code> (this not supported by IE9, so it is advised not to use this option)</li>
+<li><code class="prettyprint">undefined</code> Use <code class="prettyprint">window.history.pushState</code> if available, else use <code class="prettyprint">window.location.hash</code></li>
+</ul>
+
+<p>Default: <code class="prettyprint">undefined</code></p>
+<h2 id='wheelaction'>wheelAction</h2>
+<p>What action is performed when the mouse wheel is used on Genoverse.</p>
+
+<p>Values:</p>
+
+<ul>
+<li><code class="prettyprint">&#39;zoom&#39;</code> zoom in and out</li>
+<li><code class="prettyprint">&#39;off&#39;</code> do nothing</li>
+</ul>
+
+<p>Default: <code class="prettyprint">&#39;off&#39;</code></p>
+<h2 id='width'>width</h2>
+<p>Width of Genoverse, in pixels.</p>
+
+<p>Default: <code class="prettyprint">1000</code></p>
 
       </div>
       <div class="dark-box">
-          <div class="lang-selector">
-                <a href="#" data-language-name="shell">shell</a>
-                <a href="#" data-language-name="ruby">ruby</a>
-                <a href="#" data-language-name="python">python</a>
-          </div>
       </div>
     </div>
   </body>
