@@ -90,10 +90,6 @@
 <p>The length of the chromosome Genoverse will use to display features. <strong>Required</strong> if the <code class="prettyprint">genome</code> option is not set.</p>
 
 <p>Default: <code class="prettyprint">undefined</code></p>
-<h2 id='colors'>colors</h2>
-<p><aside class="warning">FIXME: are these even really needed?</aside></p>
-
-<p>Default: <code class="prettyprint">{ background: &#39;#FFFFFF&#39;, sortHandle: &#39;#CFD4E7&#39; }</code></p>
 <h2 id='container'>container</h2>
 <p>The element Genoverse will be created inside. This can be a CSS selector, e.g. <code class="prettyprint">&#39;#genoverse&#39;</code>, a jQuery selector, e.g. <code class="prettyprint">$(&#39;#genoverse&#39;)</code>, or a DOM element, e.g. <code class="prettyprint">document.getElementById(&#39;genoverse&#39;)</code>.
 No value is given by default, resulting in a <code class="prettyprint">&lt;div&gt;</code> with the id of &lsquo;genoverse&rsquo; being appended to the body of the page.</p>
@@ -189,8 +185,7 @@ No value is given by default, resulting in a <code class="prettyprint">&lt;div&g
 <p>Default: <code class="prettyprint">[]</code></p>
 <h2 id='urlparamtemplate'>urlParamTemplate</h2>
 <p>How your website specifies the chromosome, start and end parameters in the URL for the genomic region you are currently looking at. <code class="prettyprint">__CHR__</code>, <code class="prettyprint">__START__</code> and <code class="prettyprint">__END__</code> are placeholders for the these values.
-Set to <code class="prettyprint">false</code> if you don&rsquo;t want the URL to be updated as you navigate Genoverse.
-<aside class="warning">Is this true?</aside></p>
+Set to <code class="prettyprint">false</code> if you don&rsquo;t want the URL to be updated as you navigate Genoverse.</p>
 
 <p>Default: <code class="prettyprint">&#39;r=__CHR__:__START__-__END__&#39;</code>
 Alternative example:<code class="prettyprint">&#39;chr=__CHR__&amp;start=__START__&amp;end=__END__&#39;</code></p>
