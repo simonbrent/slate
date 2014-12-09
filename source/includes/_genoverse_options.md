@@ -23,12 +23,6 @@ The length of the chromosome Genoverse will use to display features. **Required*
 
 Default: `undefined`
 
-## colors
-
-<aside class="warning">FIXME: are these even really needed?</aside>
-
-Default: `{ background: '#FFFFFF', sortHandle: '#CFD4E7' }`
-
 ## container
 
 The element Genoverse will be created inside. This can be a CSS selector, e.g. `'#genoverse'`, a jQuery selector, e.g. `$('#genoverse')`, or a DOM element, e.g. `document.getElementById('genoverse')`.
@@ -144,7 +138,6 @@ Default: `[]`
 
 How your website specifies the chromosome, start and end parameters in the URL for the genomic region you are currently looking at. `__CHR__`, `__START__` and `__END__` are placeholders for the these values.
 Set to `false` if you don't want the URL to be updated as you navigate Genoverse.
-<aside class="warning">Is this true?</aside>
 
 Default: `'r=__CHR__:__START__-__END__'`
 Alternative example:`'chr=__CHR__&start=__START__&end=__END__'`
