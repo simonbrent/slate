@@ -29,7 +29,7 @@ The element Genoverse will be created inside. This can be a CSS selector, e.g. `
 No value is given by default, resulting in a `<div>` with the id of 'genoverse' being appended to the body of the page.
 
 Default: `undefined`
-  
+
 ## defaultLength
 
 Length of region in base pairs to use if invalid start and end coordinates are given (start is greater than end).
@@ -141,7 +141,7 @@ Set to `false` if you don't want the URL to be updated as you navigate Genoverse
 
 Default: `'r=__CHR__:__START__-__END__'`
 Alternative example:`'chr=__CHR__&start=__START__&end=__END__'`
-  
+
 ## useHash
 
 Determines which method the browser should use to update it's URL when navigating in Genoverse.
